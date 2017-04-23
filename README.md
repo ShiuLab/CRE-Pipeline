@@ -27,11 +27,9 @@ module load TAMO
 
 MDscan
 
-If your files do not end with -n-md.out:
+If your files do not end with -n-md.out: for i in {4..15}; do mv epi_lat.MDscan.w$i epi_lat.MDscan-$i-md.out; done
 
-for i in {4..15}; do mv epi_lat.MDscan.w$i epi_lat.MDscan-$i-md.out; done
-
-else:
+otherwise use the following
 
 python MDscan_tamo.py [Directory where MDscan output is located]
 
