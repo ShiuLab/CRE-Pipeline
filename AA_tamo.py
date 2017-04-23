@@ -11,5 +11,5 @@ def isoutfile(filename):
         return False
 
 for fil in filter(isoutfile, os.listdir(directory)):
-    os.system("python /mnt/home/seddonal/scripts/5_motif_merging/1.1_AA2tamo.py "+directory+fil)
+    os.system("python 1.1_AA2tamo.py "+directory+fil)
     

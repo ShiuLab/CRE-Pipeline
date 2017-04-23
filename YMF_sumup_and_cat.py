@@ -33,5 +33,5 @@ for i in dic.keys():
 	oup.write("%s\n" % "\n".join(dic[i].keys()))
 	oup.close()
 
-	os.system("python /mnt/home/seddonal/scripts/5_motif_merging/2.transform_tm.py \
+	os.system("python 2.transform_tm.py \
 		%s/all_YMF_out_%s" % (des_dir,i))

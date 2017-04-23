@@ -15,5 +15,5 @@ def isoutfile(filename):
 
 
 for fil in filter(isoutfile, os.listdir(directory)):
-    os.system("python /mnt/home/seddonal/scripts/5_motif_merging/1.2_MEME2tamo.py "+directory+fil)
-    os.system("python /mnt/home/seddonal/scripts/5_motif_merging/2_split_length.py "+directory+fil+".tm")
+    os.system("python 1.2_MEME2tamo.py "+directory+fil)
+    os.system("python 2_split_length.py "+directory+fil+".tm")
