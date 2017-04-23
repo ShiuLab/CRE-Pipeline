@@ -1,6 +1,9 @@
-# CRE-Pipeline
+# pCRE-Pipeline
 
 #Scripts by Alex Seddon and Cheng Zou
+
+This protocol will show you how to run the motif finders step by step. Motif finding is a two step process. The first step is to use six motif finding packages to identify novel motifs in the promoter regions of your clusters. The second step is to combine the motifs that have been identified using TAMO to eliminate redundant motifs identified by the motif finders. Alex Seddon
+
 # Coexpression clustering
 
 install.packages('e1071')
