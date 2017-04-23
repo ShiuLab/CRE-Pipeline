@@ -1,5 +1,6 @@
 # CRE-Pipeline
-# Scripts by Alex Seddon and Cheng Zou
+
+#Scripts by Alex Seddon and Cheng Zou
 # 1st step Clustering
 
 install.packages('e1071')
