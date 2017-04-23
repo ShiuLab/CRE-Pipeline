@@ -35,11 +35,15 @@ else:
 
 python MDscan_tamo.py [Directory where MDscan output is located]
 
+(using 1.3_MD_scan.py)
+
 python MDscan_cat.py [Directory of the TAMO formated files] [Common TAMO folder]
 
 MEME
 
 python MEME_tamo.py [Full path to MEME files directory]
+
+(using 1.2_MEME2tamo.py and 2_split_length.py)
 
 python MEME_cat.py [Full path to TAMO converted MEME] [Common TAMO folder]
 
@@ -47,11 +51,15 @@ MotifSampler
 
 python MS_tamo.py [Directory of Motifsampler files]
 
+(using 1.4_MotifSampler.py)
+
 python MS_cat.py [Directory of TAMO converted Motifsampler files] [Common TAMO folder]
 
 AlignAce
 
 python AA_tamo.py [Directory of where AlignACE files are located]
+
+(using 1.1_AA2tamo.py)
 
 python AA_cat.py [Directory of TAMO converted AlignACE files] [Common TAMO folder] [Prefix of the AlignACE files]
 
@@ -59,9 +67,13 @@ YMF
 
 python YMF_sumup_and_cat.py [Directory of YMF files] [Common TAMO folder] [Prefix for all of the YMF files in the YMF file directory]
 
+(using 2.transform_tm.py)
+
 Weeder
 
 python weeder_sumup_and_cat.py [Directory of weeder files] [Common TAMO folder]
+
+(using 2.transform_tm.py)
 
 # KL clustering of motifs and UPGMA
 
