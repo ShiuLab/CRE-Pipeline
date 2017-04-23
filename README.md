@@ -21,7 +21,7 @@ Running on single cluster
 
 Running on multiple clusters
 
-# Convert to TAMO format and concatenating files
+# Convert to TAMO format and concatanate files
 
 module load TAMO
 
