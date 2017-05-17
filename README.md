@@ -78,6 +78,15 @@ python weeder_sumup_and_cat.py [Directory of weeder files] [Common TAMO folder]
 
 # KL clustering of motifs and UPGMA
 
+-Create one TAMO file with all of the motifs (i.e. a TAMO that is not divided up by size)
+
+-python 5.1_motif_clustering_step1.py -m all.tm -d 0.03964 --dfunc entropyrange to cluster very similar motifs (i.e. Any motif with the same one-letter code is clustered and merged. This reduced the motifs from ~80000 to ~6000)
+
+-Combine all the merged TAMOs back together using cat *.0.03964-cl > After_cl_all.tm_d0.03964. 
+
+-Run the UPGMA script to merge all the motifs in the larger TAMO: python UPGMA.py -m /mnt/research/ShiuLab/6_coronatine_CRE/5_motif_merging/After_cl_all.tm_d0.03964 -d 0.03964 --dfunc entropyrange >log 
+This will take a long time, so I would recomend submitting it as a job.
+
 # Mapping and enrichment
 
 python 1_TAMO_split.py [TAMO from KL distance merging] 190
