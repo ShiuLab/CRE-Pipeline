@@ -103,4 +103,46 @@ python 5_get_significant_motifs.py -in [Results of the Fisher test] -a [P-value 
 
 # PCC distance merging
 
+The script pcc_merge_CC.py has four dependent scripts: 3.calculate_distance_2_file.py, 3.calculate_distance_matrix.py, MotifMetrics.py, and UPGMA_final.R. If you wish to move pcc_marge_CC.py to your own directory, you need to make sure that the the four dependent funcitons are in the same directory. 
+
+python pcc_merge_CC.py create_cc -t [TAMO file] -w [Working directory for creating the matrices]
+
+nohup python qsub_hpc.py -f queue -u [username] -c runcc -w 20 -m 2 -n 230 &
+
+python pcc_merge_CC.py check_jobs -w [Working directory for creating the matrices]
+
+python pcc_merge_CC.py combine_distance_matrix -t [TAMO file] -w [Working directory for creating the matrices]
+
+python pcc_merge_CC.py run_UPGMA -t [TAMO file] -w [Working directory for creating the matrices] -h [height to cut the tree (default is 0.05)] -wall [Walltime (default is 120 minutes)] -mem [Memory requirement (default is 124)]
+
+python pcc_merge_CC.py merge_runs_cc -t [TAMO file of significantly enriched motifs] -w [working directory] -h [height to cut the tree] -ancestor [see help] -genome [Fasta of promoter sequence] -target [The list of target genes, see help]
+
+python pcc_merge_CC.py check_top_files -w [working directory]
+
+python pcc_merge_CC.py merge_runs_cleanup -t [Name of base TAMO file] -w [working directory]
+
+
 # Location merging
+
+python motif_location_merging.py remove_duplicate -t [TAMO file]
+
+python create_mapping_index.py [Directory of mapping files] [output name]
+
+python motif_location_merging.py sim_matrix -i [Motif map index file] -m [Directory of motif mapping files] -g [List of genes that you wish to look for overlap of motifs] -t [TAMO file of motifs]
+
+python motif_location_merging.py run_as_job -i [Motif map index file] -m [Directory of motif mapping files] -g [List of genes that you wish to look for overlap of motifs] -t [TAMO file of motifs] -wall [Wall time]
+
+python motif_location_merging.py create_matrix -s [SIM file]
+
+python motif_location_merging.py run_UPGMA -mat [Matrix created from SIM file]
+
+python motif_location_merging.py merge_runs_cc -t [TAMO_file] -w [working directory] -target [Target genes] -genome [FASTA file with the promoter seguence of ALL genes] -c [Clustering file made from your matrix]
+
+# Final mapping to genome or selected sequences using above mapping codes
+
+
+
+
+
+
+
